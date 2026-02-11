@@ -1,0 +1,16 @@
+{
+  "name": "jalibi",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "discord.js": "^14.25.1",
+    "dotenv": "^17.2.4",
+    "openai": "^6.20.0"
+  }
+}
