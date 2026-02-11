@@ -1,6 +1,7 @@
-const { Client, GatewayIntentBits } = require("discord.js");
+const { Client, GatewayIntentBits, AttachmentBuilder } = require("discord.js");
 const OpenAI = require("openai");
 const dotenv = require("dotenv");
+const path = require("path");
 
 dotenv.config();
 
@@ -61,9 +62,13 @@ client.on("messageCreate", async (msg) => {
 
         const prompt = msg.content.replace(/<@!?\d+>/g, "").trim();
         if (!prompt) return;
-
         if (/mc/i.test(prompt)) {
-            await msg.reply("Qpal!! Dun ka sa McDo!!");
+            const imagePath = path.join(__dirname, "jabi.jpg");
+            const imageAttachment = new AttachmentBuilder(imagePath);
+            await Promise.all([
+                msg.reply({ files: [imageAttachment] }),
+                msg.reply("Qpal!! Dun ka sa McDo!!"),
+            ]);
             return;
         }
 
