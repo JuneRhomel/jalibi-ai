@@ -63,7 +63,7 @@ client.on("messageCreate", async (msg) => {
         if (!prompt) return;
 
         if (/mc/i.test(prompt)) {
-            await msg.reply("Qpal!! Sa McDo yon");
+            await msg.reply("Qpal!! Dun ka sa McDo!!");
             return;
         }
 
